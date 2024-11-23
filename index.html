@@ -105,10 +105,10 @@
       <!-- <li><a href="#projects" class="hover:text-black dark:hover:text-white">Projects</a></li> -->
     </ul>
     <div class="flex items-center">
-      <button onclick="toggleTheme()" id="theme-toggle"
+      <!-- <button onclick="toggleTheme()" id="theme-toggle"
         class="px-3 py-2 text-xl rounded-lg shadow-sm dark:shadow-md dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-700">
         🌞
-      </button>
+      </button> -->
       <button onclick="onContactMy()"
         class="hidden md:block bg-purple-600 text-white px-6 py-2 ml-4 rounded-lg hover:bg-purple-700">Get In
         Touch</button>
@@ -130,13 +130,13 @@
       </p>
       <div class="mt-10 flex justify-center gap-4">
         <button onclick="onContactMy()"
-          class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-700 dark:shadow-purple-800">
+          class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-700 dark:shadow-purple-800 min-w-[200px]">
           Let’s Talk
         </button>
-        <button
+        <!-- <button
           class="text-purple-600 border border-purple-600 px-6 py-3 rounded-lg hover:bg-purple-100 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-800 dark:hover:text-gray-100">
           Learn More
-        </button>
+        </button> -->
       </div>
     </section>
 
@@ -144,7 +144,7 @@
 
 
     <!-- About Us Section -->
-    <!-- <section class="px-6 py-16">
+    <section class="px-6 py-16">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100">
         Who We Are
       </h2>
@@ -179,37 +179,12 @@
           </p>
         </div>
       </div>
-    </section> -->
+    </section>
 
-
-    <!-- Projects Section -->
-    <!-- <section id="projects" class="px-6 py-16">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Featured Projects</h2>
-      <div class="grid gap-6 md:grid-cols-2">
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-md">
-          <img src="project1-placeholder.jpg" alt="Project 1" class="rounded-lg mb-4">
-          <h3 class="text-xl font-bold mb-4">AI Chatbot for E-Commerce</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            An intelligent chatbot that helps customers find the right products, answer queries, and provide seamless
-            support, integrated with real-time APIs.
-          </p>
-          <a href="#" class="text-purple-600 dark:text-purple-400 mt-4 inline-block hover:underline">Learn More</a>
-        </div>
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-md">
-          <img src="project2-placeholder.jpg" alt="Project 2" class="rounded-lg mb-4">
-          <h3 class="text-xl font-bold mb-4">Real-Time Object Detection System</h3>
-          <p class="text-gray-600 dark:text-gray-300">
-            A computer vision system designed for industrial safety, detecting objects in real-time to prevent accidents
-            and optimize workflows.
-          </p>
-          <a href="#" class="text-purple-600 dark:text-purple-400 mt-4 inline-block hover:underline">Learn More</a>
-        </div>
-      </div>
-    </section> -->
 
     <!-- How TasCode AI Helps -->
 
-    <!-- <section id="services" class="px-6 py-16">
+    <section id="services" class="px-6 py-16">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
         How Does TasCode AI Help <span class="text-purple-600">Your Business?</span>
       </h2>
@@ -219,26 +194,59 @@
       </p>
       <div class="grid gap-6 md:grid-cols-3">
         <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
-          <h3 class="text-xl font-bold mb-4">Build Chatbots That Talk About Your Data</h3>
+          <h3 class="text-xl font-bold mb-4 text-center">Build Chatbots That Talk About Your Data</h3>
           <p class="text-gray-600 dark:text-gray-300">
             Create custom chatbots that enable seamless interactions with your data for both customers and internal
             teams.
           </p>
         </div>
         <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
-          <h3 class="text-xl font-bold mb-4">Document Summarization & Extraction</h3>
+          <h3 class="text-xl font-bold mb-4 text-center">Document Summarization & Extraction</h3>
           <p class="text-gray-600 dark:text-gray-300">
             Automate document summarization and information extraction to save time and reduce costs.
           </p>
         </div>
         <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
-          <h3 class="text-xl font-bold mb-4">Improve Product Capabilities</h3>
+          <h3 class="text-xl font-bold mb-4 text-center">Improve Product Capabilities</h3>
           <p class="text-gray-600 dark:text-gray-300">
             Enhance user experiences and add AI-driven features to your products, delivering measurable value.
           </p>
         </div>
       </div>
-    </section> -->
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="px-6 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Featured Projects</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- Project 1 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-md">
+          <img src="assets/images/temporal_anomaly_detection.png" alt="Temporal Anomaly Detection in Videos"
+            class="rounded-lg mb-4">
+          <h3 class="text-xl font-bold mb-4">Temporal Anomaly Detection in Videos</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            A cutting-edge tool leveraging object detection and tracking to identify anomalies in video sequences,
+            forming
+            a key part of an active learning pipeline for enhanced model performance.
+          </p>
+          <a href="https://github.com/smttsp/temporal_consistency_odt"
+            class="text-purple-600 dark:text-purple-400 mt-4 inline-block hover:underline">Learn More</a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-md">
+          <img src="assets/images/tuberculosis_detection.png" alt="Tuberculosis Detection" class="rounded-lg mb-[42px]">
+          <h3 class="text-xl font-bold mb-4">Tuberculosis Detection</h3>
+          <p class="text-gray-600 dark:text-gray-300 flex-1">
+            An end-to-end tuberculosis detection system using DenseNet121, deployed on Google Cloud with a user-friendly
+            interface for accurate chest X-ray analysis.
+          </p>
+          <a href="https://github.com/smttsp/tuberculosis_detection"
+            class="text-purple-600 dark:text-purple-400 mt-4 inline-block hover:underline">Learn More</a>
+        </div>
+      </div>
+    </section>
+
 
     <!-- Footer Section -->
     <footer class="py-8">
@@ -259,15 +267,15 @@
             class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 text-sm">Services</a>
           <a href="#projects"
             class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 text-sm">Projects</a>
-          <a href="#contact"
+          <a href="mailto:info@tascode-ai.com"
             class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 text-sm">Contact
             Us</a>
         </div>
 
         <!-- Contact Details -->
         <p class="text-gray-600 dark:text-gray-300 text-xs mb-4">
-          Email: <a href="mailto:contact@tascodeai.com"
-            class="hover:text-purple-600 dark:hover:text-purple-400">contact@tascodeai.com</a>
+          Email: <a href="mailto:info@tascode-ai.com"
+            class="hover:text-purple-600 dark:hover:text-purple-400">info@tascode-ai.com</a>
         </p>
         <p id="footer-year" class="text-gray-600 dark:text-gray-300 text-xs">
           &copy; <span id="year"></span> TasCode AI LLC. All rights reserved.
