@@ -5,35 +5,80 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TasCode AI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tascodeai.com/">
+  <meta property="og:title" content="TasCode AI | AI & Machine Learning Consulting">
+  <meta property="og:description"
+    content="Innovating tomorrow's solutions with today's technology. Specialists in AI-powered Chatbots, Computer Vision, and Bespoke Digital Tools.">
+  <meta property="og:image" content="https://tascodeai.com/assets/images/social-preview.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://tascodeai.com/">
+  <meta name="twitter:title" content="TasCode AI | AI & Machine Learning Consulting">
+  <meta name="twitter:description"
+    content="Innovating tomorrow's solutions with today's technology. Specialists in AI-powered Chatbots, Computer Vision, and Bespoke Digital Tools.">
+  <meta name="twitter:image" content="https://tascodeai.com/assets/images/social-preview.png">
+
+  <!-- General Meta Tags -->
+  <meta name="title" content="TasCode AI | AI & Machine Learning Consulting">
+  <meta name="description"
+    content="Innovating tomorrow's solutions with today's technology. Specialists in AI-powered Chatbots, Computer Vision, and Bespoke Digital Tools.">
+  <meta name="keywords" content="AI consulting, machine learning, chatbots, computer vision, AI tools, TasCode AI">
+  <meta name="author" content="TasCode AI LLC">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            purple: {
+              100: '#F0E6FF',
+              200: '#D0BFFF',
+              300: '#B392FF',
+              400: '#8A63FF',
+              500: '#5C1A99',
+              600: '#4B1482',
+              700: '#3A0D6E',
+              800: '#2A0854',
+              900: '#1E0533',
+            },
+          },
+          boxShadow: {
+            purple: '0 4px 6px -1px rgba(138, 99, 255, 0.1), 0 2px 4px -1px rgba(138, 99, 255, 0.06)',
+          },
+        },
+      },
+    }
+  </script>
   <!-- add a favicon -->
   <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
   <script>
     // Dark mode toggle
-    // const toggleTheme = () => {
-    //   const html = document.documentElement;
-    //   const isLight = html.classList.toggle("dark");
-    //   const isDark = html.classList.toggle("light");
-    //   localStorage.setItem("theme", isLight ? "dark" : "light");
-
-    // };
+    const toggleTheme = () => {
+      const themeToggle = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+      const isLight = html.classList.toggle("dark");
+      themeToggle.textContent = isLight ? "🌞" : "🌙";
+      localStorage.setItem("theme", isLight ? "dark" : "light");
+    };
 
     // // Set initial theme based on system preference or saved preference
-    // document.addEventListener("DOMContentLoaded", () => {
-    //   const savedTheme = localStorage.getItem("theme");
-    //   if (savedTheme) {
-    //     document.documentElement.classList.toggle("dark", savedTheme === "dark");
-    //   } else {
-    //     document.documentElement.classList.toggle(
-    //       "dark",
-    //       window.matchMedia("(prefers-color-scheme: dark)").matches
-    //     );
-    //   }
-    // });
+    document.documentElement.classList.toggle(
+      'dark',
+      localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    )
+
 
     const onContactMy = () => {
+      const contactEmail = "info@tascode-ai.com";
       const emailTemplate = "Hello TasCode AI Team, \n\nI would like to discuss a potential project with you. \n\nPlease let me know your availability. \n\nBest regards, \n[Your Name]";
-      window.location.href = "mailto:support@tascode-ai.com?subject=AI Project Inquiry&body=" + encodeURIComponent(emailTemplate);
+      window.location.href = `mailto:${contactEmail}?subject=AI Project Inquiry&body=${encodeURIComponent(emailTemplate)}`;
     }
   </script>
   <style>
@@ -43,10 +88,11 @@
   </style>
 </head>
 
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
+<body class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 font-sans">
   <!-- Navigation Bar -->
-  <nav class="flex justify-between items-center p-6 shadow-md dark:shadow-lg">
-    <div class="text-2xl font-extrabold flex items-center text-purple-600 dark:text-purple-400 tracking-tight">
+  <nav class="flex justify-between items-center p-6 shadow-md dark:shadow-lg position-fixed w-full z-10">
+    <div
+      class="text-2xl font-extrabold flex items-center text-purple-600 dark:text-purple-400 tracking-tight select-none">
       <span
         class="inline-block bg-purple-200 dark:bg-purple-700 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-lg shadow-lg mr-2">
         T
@@ -55,13 +101,13 @@
     </div>
 
     <ul class="hidden md:flex gap-6 text-gray-600 dark:text-gray-300">
-      <li><a href="#services" class="hover:text-black dark:hover:text-white">TasCode AI Services</a></li>
-      <li><a href="#projects" class="hover:text-black dark:hover:text-white">Projects</a></li>
+      <!-- <li><a href="#services" class="hover:text-black dark:hover:text-white">TasCode AI Services</a></li> -->
+      <!-- <li><a href="#projects" class="hover:text-black dark:hover:text-white">Projects</a></li> -->
     </ul>
     <div class="flex items-center">
-      <button onclick="toggleTheme()"
-        class="px-3 py-2 text-xl border rounded-lg shadow-sm dark:shadow-md dark:bg-gray-800">
-        🌞 / 🌙
+      <button onclick="toggleTheme()" id="theme-toggle"
+        class="px-3 py-2 text-xl rounded-lg shadow-sm dark:shadow-md dark:bg-gray-900 hover:bg-gray-200 dark:hover:bg-gray-700">
+        🌞
       </button>
       <button onclick="onContactMy()"
         class="hidden md:block bg-purple-600 text-white px-6 py-2 ml-4 rounded-lg hover:bg-purple-700">Get In
@@ -72,17 +118,15 @@
   <!-- Make all the reset of content in the middle on the screen and 90% when on mobile -->
   <div class="flex flex-col items-center justify-center min-h-screen w-full md:w-9/10 mx-auto max-w-5xl">
     <!-- Hero Section -->
-    <section class="text-center px-6 py-20 bg-gray-50 dark:bg-gray-900">
+    <section class="text-center px-6 py-20">
       <h1 class="text-4xl md:text-6xl font-bold leading-tight text-gray-800 dark:text-gray-100">
-        Machine Learning, AI, <br>
-        Natural Language Processing, <br>
-        Computer Vision, <span class="text-purple-600 dark:text-purple-400">TasCode AI</span>
+        Build Chatbots, and
+        <br>
+        AI-Powered Solutions with <span class="text-purple-600 dark:text-purple-400">TasCode AI</span>
       </h1>
       <p class="mt-6 text-gray-600 dark:text-gray-300 text-lg">
-        TasCode AI is an AI & machine learning consulting company focused on generative AI implementations.
-      </p>
-      <p class="mt-2 text-gray-600 dark:text-gray-300 text-lg">
-        We help companies build AI projects through development and strategy.
+        TasCode AI LLC is your trusted partner in crafting intelligent tools for chatbots,
+        <br>computer vision, and other AI-driven innovations tailored to your needs.
       </p>
       <div class="mt-10 flex justify-center gap-4">
         <button onclick="onContactMy()"
@@ -98,8 +142,9 @@
 
 
 
+
     <!-- About Us Section -->
-    <!-- <section class="px-6 py-16 bg-gray-100 dark:bg-gray-900">
+    <!-- <section class="px-6 py-16">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100">
         Who We Are
       </h2>
@@ -164,7 +209,7 @@
 
     <!-- How TasCode AI Helps -->
 
-    <!-- <section id="services" class="px-6 py-16 bg-gray-50 dark:bg-gray-900">
+    <!-- <section id="services" class="px-6 py-16">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
         How Does TasCode AI Help <span class="text-purple-600">Your Business?</span>
       </h2>
@@ -196,7 +241,7 @@
     </section> -->
 
     <!-- Footer Section -->
-    <footer class="bg-gray-100 dark:bg-gray-900 py-8">
+    <footer class="py-8">
       <div class="container mx-auto text-center">
         <!-- Logo and Motto -->
         <div class="flex flex-col items-center mb-6">
