@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TasCode AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- add a favicon -->
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <script>
+    // Dark mode toggle
+    const toggleTheme = () => {
+      const html = document.documentElement;
+      const isLight = html.classList.toggle("dark");
+      const isDark = html.classList.toggle("light");
+      localStorage.setItem("theme", isLight ? "dark" : "light");
+
+    };
+
+    // Set initial theme based on system preference or saved preference
+    document.addEventListener("DOMContentLoaded", () => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) {
+        document.documentElement.classList.toggle("dark", savedTheme === "dark");
+      } else {
+        document.documentElement.classList.toggle(
+          "dark",
+          window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+      }
+    });
+
+    const onContactMy = () => {
+      const emailTemplate = "Hello TasCode AI Team, \n\nI would like to discuss a potential project with you. \n\nPlease let me know your availability. \n\nBest regards, \n[Your Name]";
+      window.location.href = "mailto:support@tascode-ai.com?subject=AI Project Inquiry&body=" + encodeURIComponent(emailTemplate);
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 font-sans">
+  <!-- Navigation Bar -->
+  <nav class="flex justify-between items-center p-6 shadow-md dark:shadow-lg">
+    <div class="text-2xl font-extrabold flex items-center text-purple-600 dark:text-purple-400 tracking-tight">
+      <span
+        class="inline-block bg-purple-200 dark:bg-purple-700 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-lg shadow-lg mr-2">
+        T
+      </span>
+      TasCode <span class="text-gray-900 dark:text-gray-200">AI</span>
+    </div>
+
+    <ul class="hidden md:flex gap-6 text-gray-600 dark:text-gray-300">
+      <li><a href="#services" class="hover:text-black dark:hover:text-white">TasCode AI Services</a></li>
+      <li><a href="#projects" class="hover:text-black dark:hover:text-white">Projects</a></li>
+    </ul>
+    <div class="flex items-center">
+      <button onclick="toggleTheme()"
+        class="px-3 py-2 text-xl border rounded-lg shadow-sm dark:shadow-md dark:bg-gray-800">
+        🌞 / 🌙
+      </button>
+      <button onclick="onContactMy()"
+        class="hidden md:block bg-purple-600 text-white px-6 py-2 ml-4 rounded-lg hover:bg-purple-700">Get In
+        Touch</button>
+    </div>
+  </nav>
+
+  <!-- Make all the reset of content in the middle on the screen and 90% when on mobile -->
+  <div class="flex flex-col items-center justify-center min-h-screen w-full md:w-9/10 mx-auto max-w-5xl">
+    <!-- Hero Section -->
+    <section class="text-center px-6 py-20 bg-gray-50 dark:bg-gray-900">
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight text-gray-800 dark:text-gray-100">
+        Machine Learning, AI, <br>
+        Natural Language Processing, <br>
+        Computer Vision, <span class="text-purple-600 dark:text-purple-400">TasCode AI</span>
+      </h1>
+      <p class="mt-6 text-gray-600 dark:text-gray-300 text-lg">
+        TasCode AI is an AI & machine learning consulting company focused on generative AI implementations.
+      </p>
+      <p class="mt-2 text-gray-600 dark:text-gray-300 text-lg">
+        We help companies build AI projects through development and strategy.
+      </p>
+      <div class="mt-10 flex justify-center gap-4">
+        <button onclick="onContactMy()"
+          class="bg-purple-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-purple-700 dark:shadow-purple-800">
+          Let’s Talk
+        </button>
+        <button
+          class="text-purple-600 border border-purple-600 px-6 py-3 rounded-lg hover:bg-purple-100 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-800 dark:hover:text-gray-100">
+          Learn More
+        </button>
+      </div>
+    </section>
+
+
+
+    <!-- About Us Section -->
+    <section class="px-6 py-16 bg-gray-100 dark:bg-gray-900">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-800 dark:text-gray-100">
+        Who We Are
+      </h2>
+      <p class="text-center text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-12">
+        At <span class="text-purple-600 dark:text-purple-400">TasCode AI LLC</span>, we specialize in delivering
+        cutting-edge AI and software solutions tailored to your business. We bridge the gap between complex
+        technology and practical implementation with a focus on innovation, efficiency, and excellence.
+      </p>
+      <div class="grid gap-6 md:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+          <div class="mb-4 text-purple-600 dark:text-purple-400 text-4xl text-center">🤝</div>
+          <h3 class="text-xl font-bold text-center mb-4 text-gray-800 dark:text-gray-100">Client-Centric Approach</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-center">
+            We prioritize understanding your unique challenges and designing custom solutions that align perfectly
+            with your goals.
+          </p>
+        </div>
+        <!-- Card 2 -->
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+          <div class="mb-4 text-purple-600 dark:text-purple-400 text-4xl text-center">🌟</div>
+          <h3 class="text-xl font-bold text-center mb-4 text-gray-800 dark:text-gray-100">Expert Team</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-center">
+            Our experienced AI and software developers work collaboratively to deliver high-quality, impactful
+            solutions.
+          </p>
+        </div>
+        <!-- Card 3 -->
+        <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+          <div class="mb-4 text-purple-600 dark:text-purple-400 text-4xl text-center">🚀</div>
+          <h3 class="text-xl font-bold text-center mb-4 text-gray-800 dark:text-gray-100">Innovation-Driven</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-center">
+            We stay ahead of the curve by leveraging the latest technologies and tools to help you achieve success
+            in a competitive market.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="px-6 py-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Featured Projects</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- Project 1 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-md">
+          <img src="project1-placeholder.jpg" alt="Project 1" class="rounded-lg mb-4">
+          <h3 class="text-xl font-bold mb-4">AI Chatbot for E-Commerce</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            An intelligent chatbot that helps customers find the right products, answer queries, and provide seamless
+            support, integrated with real-time APIs.
+          </p>
+          <a href="#" class="text-purple-600 dark:text-purple-400 mt-4 inline-block hover:underline">Learn More</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg dark:shadow-md">
+          <img src="project2-placeholder.jpg" alt="Project 2" class="rounded-lg mb-4">
+          <h3 class="text-xl font-bold mb-4">Real-Time Object Detection System</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            A computer vision system designed for industrial safety, detecting objects in real-time to prevent accidents
+            and optimize workflows.
+          </p>
+          <a href="#" class="text-purple-600 dark:text-purple-400 mt-4 inline-block hover:underline">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How TasCode AI Helps -->
+    <section id="services" class="px-6 py-16 bg-gray-50 dark:bg-gray-900">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">
+        How Does TasCode AI Help <span class="text-purple-600">Your Business?</span>
+      </h2>
+      <p class="text-center text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+        Automate major aspects of your workflow or enhance your product's capabilities with cutting-edge AI & machine
+        learning solutions, delivering measurable ROI.
+      </p>
+      <div class="grid gap-6 md:grid-cols-3">
+        <!-- Card 1 -->
+        <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Build Chatbots That Talk About Your Data</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Create custom chatbots that enable seamless interactions with your data for both customers and internal
+            teams.
+          </p>
+        </div>
+        <!-- Card 2 -->
+        <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Document Summarization & Extraction</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Automate document summarization and information extraction to save time and reduce costs.
+          </p>
+        </div>
+        <!-- Card 3 -->
+        <div class="p-6 bg-white dark:bg-gray-800 shadow-lg rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Improve Product Capabilities</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Enhance user experiences and add AI-driven features to your products, delivering measurable value.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-100 dark:bg-gray-900 py-8">
+      <div class="container mx-auto text-center">
+        <!-- Logo and Motto -->
+        <div class="flex flex-col items-center mb-6">
+          <div class="text-2xl font-extrabold text-purple-600 dark:text-purple-400 mb-2">
+            TasCode AI LLC
+          </div>
+          <p class="text-gray-600 dark:text-gray-300 text-sm max-w-md">
+            Innovating tomorrow's solutions with today's technology.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div class="flex justify-center gap-6 mb-6">
+          <a href="#services"
+            class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 text-sm">Services</a>
+          <a href="#projects"
+            class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 text-sm">Projects</a>
+          <a href="#contact"
+            class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 text-sm">Contact
+            Us</a>
+        </div>
+
+        <!-- Contact Details -->
+        <p class="text-gray-600 dark:text-gray-300 text-xs mb-4">
+          Email: <a href="mailto:contact@tascodeai.com"
+            class="hover:text-purple-600 dark:hover:text-purple-400">contact@tascodeai.com</a>
+        </p>
+        <p id="footer-year" class="text-gray-600 dark:text-gray-300 text-xs">
+          &copy; <span id="year"></span> TasCode AI LLC. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </div>
+  <script>
+    // Dynamically update the year
+    document.getElementById('year').textContent = new Date().getFullYear()
+  </script>
+
+</body>
+
+</html>
